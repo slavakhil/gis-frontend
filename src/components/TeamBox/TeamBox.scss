@@ -1,0 +1,71 @@
+@use '@styles/colors.scss' as *;
+@use '@styles/fonts.scss' as *;
+
+.team-box {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 40px;
+  border-radius: 16px;
+  gap: 40px;
+  background-color: $cWhiteTransparent;
+  box-shadow: $boxShadowBottom;
+  &__title {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+    .title-name {
+      font-size: $fsSubtitle;
+      font-weight: $w700;
+      color: $cWhite;
+    }
+    .title-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+    .open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    overflow-x: auto;
+    position: relative;
+    scroll-behavior: smooth;
+    padding-bottom: 16px; // резерв под скроллбар
+    margin-bottom: -16px; // компенсируем внешний отступ
+
+    // скрываем по умолчанию
+    &::-webkit-scrollbar {
+      height: 8px;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: 4px;
+      transition: transform 0.2 ease;
+    }
+
+    // показываем только при наведении
+    &:hover::-webkit-scrollbar {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    &:hover::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .element {
+      width: 466px;
+      border-radius: 8px;
+      height: 536px;
+      background-color: aqua;
+    }
+  }
+}

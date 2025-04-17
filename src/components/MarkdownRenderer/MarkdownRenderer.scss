@@ -1,0 +1,47 @@
+@use '@styles/colors.scss' as *;
+@use '@styles/fonts.scss' as *;
+
+.markdown-content {
+  .title {
+    margin-bottom: 10px;
+    .text {
+      font-weight: $w700;
+      font-size: $fsSection;
+    }
+  }
+
+  .paragraph {
+    margin-bottom: 10px;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 10px;
+    &__item {
+      position: relative;
+      padding-left: 26px;
+      &::before {
+        content: '-';
+        position: absolute;
+        left: 10px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+.bold {
+  font-weight: $w700;
+  font-size: $fsTextBig;
+}
+
+.cursive {
+  font-style: italic;
+  font-size: $fsTextBig;
+}
+
+.text {
+  font-size: $fsTextBig;
+}

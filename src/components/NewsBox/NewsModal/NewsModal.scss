@@ -1,0 +1,73 @@
+@use '@styles/colors.scss' as *;
+@use '@styles/fonts.scss' as *;
+
+.news-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    .header-title {
+      font-weight: $w700;
+      font-size: $fsSubtitle;
+      color: $cBlue;
+    }
+    .header-close-modal {
+      cursor: pointer;
+      fill: $cBlack;
+      &:hover {
+        fill: $cRed;
+      }
+    }
+  }
+
+  &__content {
+    max-height: calc(100vh - 340px);
+    overflow-y: auto;
+    // скрываем по умолчанию
+    &::-webkit-scrollbar {
+      width: 8px;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: 4px;
+      transition: transform 0.2 ease;
+    }
+
+    // показываем только при наведении
+    &:hover::-webkit-scrollbar {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    &:hover::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.3);
+    }
+    .content-photos {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 40px;
+
+      &__photo {
+        border-radius: 8px;
+        height: 300px;
+      }
+    }
+    .content-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: $cBlue;
+      font-weight: $w400;
+      &__date {
+      }
+      &__author-name {
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use '@styles/colors.scss' as *;
+@use '@styles/fonts.scss' as *;
+
+.topbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: $cBlue;
+  padding: 32px 48px;
+  justify-content: end;
+
+  .topbar-info {
+    text-decoration: none;
+    font-size: $fsSection;
+    font-weight: $w400;
+    color: $cWhite;
+
+    &:hover {
+      color: #44a6e4;
+    }
+  }
+}

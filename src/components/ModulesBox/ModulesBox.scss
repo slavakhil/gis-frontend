@@ -1,0 +1,24 @@
+@use '@styles/colors.scss' as *;
+@use '@styles/fonts.scss' as *;
+
+.modules-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 640px;
+  background-color: $cWhite;
+  border-radius: 0 0 16px 16px;
+  padding: 100px 40px 0 40px;
+  gap: 50px;
+  box-shadow: $boxShadowRightBottom;
+
+  &__title {
+    font-weight: $w700;
+    font-size: $fsSubtitle;
+    color: $cBlue;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+}

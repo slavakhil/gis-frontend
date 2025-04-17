@@ -1,0 +1,22 @@
+@use '@styles/colors.scss' as *;
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 0 50px 50px;
+  background-image: url('../../assets/icons/map.svg');
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 60%;
+
+  background-color: $background-color;
+  &__title {
+  }
+  &__news {
+  }
+  &__team {
+  }
+}

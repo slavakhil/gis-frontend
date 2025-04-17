@@ -1,0 +1,26 @@
+@use '@styles/colors.scss' as *;
+@use '@styles/fonts.scss' as *;
+
+.module-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 56px 0;
+  border-top: 1px solid $cGrey;
+  cursor: pointer;
+  color: $cBlue;
+  fill: $cGrey;
+  &:hover {
+    color: $background-color;
+    fill: $background-color;
+  }
+
+  &__name {
+    font-weight: $w700;
+    font-size: $fsTextBig;
+  }
+
+  &__arrow {
+  }
+}

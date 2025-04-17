@@ -1,0 +1,68 @@
+@use '@styles/fonts.scss' as *;
+@use '@styles/colors.scss' as *;
+
+.team-member {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 326px;
+
+  &__photo {
+    box-sizing: border-box;
+    height: 232px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid $cWhite;
+    &:hover {
+      box-shadow: $boxShadowCard;
+      transition: 0.2s;
+    }
+  }
+  &__info {
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    height: 130px;
+    border-radius: 8px;
+    background-color: $cWhite;
+    padding: 8px;
+    gap: 5px;
+    .main-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+      &__fio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 51px;
+        .fio-element {
+          font-size: $fsInfoBig;
+          font-weight: $w700;
+          color: $cBlue;
+          text-align: center;
+        }
+      }
+      &__position {
+        font-size: $fsInfoMedium;
+        font-weight: $w400;
+        color: $cBlue;
+        text-align: center;
+      }
+    }
+    .info-email {
+      font-size: $fsInfoSmall;
+      font-weight: $w400;
+      color: $cBlue;
+      text-align: center;
+    }
+  }
+}

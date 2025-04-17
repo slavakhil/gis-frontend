@@ -1,0 +1,50 @@
+@use '@styles/colors.scss' as *;
+@use '@styles/fonts.scss' as *;
+
+.news-box {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 40px;
+  border-radius: 16px;
+  gap: 40px;
+  background-color: $cWhiteTransparent;
+  box-shadow: $boxShadowBottom;
+
+  &__title {
+    font-size: $fsSubtitle;
+    font-weight: $w700;
+    color: $cWhite;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    overflow-x: auto;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: none;
+    padding-bottom: 16px; // резерв под скроллбар
+    margin-bottom: -16px; // компенсируем внешний отступ
+
+    // скрываем по умолчанию
+    &::-webkit-scrollbar {
+      height: 8px;
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: 4px;
+      transition: transform 0.2 ease;
+    }
+
+    // показываем только при наведении
+    &:hover::-webkit-scrollbar {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    &:hover::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+}
