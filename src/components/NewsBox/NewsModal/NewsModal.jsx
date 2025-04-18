@@ -18,9 +18,10 @@ function NewsModal({ modal, onCloseModal }) {
         <div className='news-modal-content__content'>
           <MarkdownRenderer blocks={modal.newsElement.blockText} />
           <div className='content-photos'>
-            {modal.newsElement.photo.map((url) => (
-              <img className='content-photos__photo' src={import.meta.env.VITE_SERVER + url} />
-            ))}
+            {modal.newsElement.photo &&
+              modal.newsElement.photo.map((url) => (
+                <img className='content-photos__photo' src={import.meta.env.VITE_SERVER + url} />
+              ))}
           </div>
           <div className='content-info'>
             <div className='content-info__date'>{formatDate(modal.newsElement.date)}</div>

@@ -10,6 +10,8 @@ function NewsBox({ onOpenModal }) {
   const listRef = useRef(null);
   const observer = useRef();
 
+  // const scrollRef = useHorizontalScroll()
+
   const loadData = async (page) => {
     const data = await getAllNews(page, 5); // предполагаем, что API принимает такие параметры
     if (data.length < 5) setHasMore(false);
@@ -28,7 +30,10 @@ function NewsBox({ onOpenModal }) {
     const onWheel = (e) => {
       if (e.deltaY === 0) return;
       e.preventDefault();
-      container.scrollLeft += e.deltaY;
+      console.log(e.deltaY);
+      const scrollSpeed = 1;
+      container.scrollLeft += e.deltaY * scrollSpeed;
+      // container.scrollLeft += e.deltaY;
     };
 
     container.addEventListener('wheel', onWheel, { passive: false });
@@ -78,3 +83,31 @@ function NewsBox({ onOpenModal }) {
 }
 
 export default NewsBox;
+
+// const useHorizontalScroll = () => {
+//   const ref = useRef(null);
+
+//   useEffect(() => {
+//     const el = ref.current;
+//     if (!el) return;
+
+//     const onWheel = (e) => {
+//       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+//         // Только если вертикальный скролл преобладает
+//         e.preventDefault(); // блокируем вертикаль
+//         el.scrollBy({
+//           left: e.deltaY, // направляем в горизонталь
+//           behavior: 'auto', // можно 'smooth', но авто быстрее
+//         });
+//       }
+//     };
+
+//     el.addEventListener('wheel', onWheel, { passive: false });
+
+//     return () => {
+//       el.removeEventListener('wheel', onWheel);
+//     };
+//   }, []);
+
+//   return ref;
+// };

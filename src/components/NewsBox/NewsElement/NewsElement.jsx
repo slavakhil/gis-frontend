@@ -6,7 +6,7 @@ const NewsElement = React.forwardRef(({ element, onOpenModal }, ref) => {
   return (
     <div className='news-element' onClick={() => onOpenModal(element)} ref={ref}>
       <div className='news-element__info'>
-        {element.photo[0] ? (
+        {element.photo && element.photo[0] ? (
           <img className='info-photo' src={`${import.meta.env.VITE_SERVER}${element.photo[0]}`} />
         ) : (
           <DefaultNewsPhoto />
