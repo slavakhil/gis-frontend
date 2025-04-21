@@ -33,7 +33,6 @@ function NewsBox({ onOpenModal }) {
       console.log(e.deltaY);
       const scrollSpeed = 1;
       container.scrollLeft += e.deltaY * scrollSpeed;
-      // container.scrollLeft += e.deltaY;
     };
 
     container.addEventListener('wheel', onWheel, { passive: false });
@@ -83,31 +82,3 @@ function NewsBox({ onOpenModal }) {
 }
 
 export default NewsBox;
-
-// const useHorizontalScroll = () => {
-//   const ref = useRef(null);
-
-//   useEffect(() => {
-//     const el = ref.current;
-//     if (!el) return;
-
-//     const onWheel = (e) => {
-//       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-//         // Только если вертикальный скролл преобладает
-//         e.preventDefault(); // блокируем вертикаль
-//         el.scrollBy({
-//           left: e.deltaY, // направляем в горизонталь
-//           behavior: 'auto', // можно 'smooth', но авто быстрее
-//         });
-//       }
-//     };
-
-//     el.addEventListener('wheel', onWheel, { passive: false });
-
-//     return () => {
-//       el.removeEventListener('wheel', onWheel);
-//     };
-//   }, []);
-
-//   return ref;
-// };
